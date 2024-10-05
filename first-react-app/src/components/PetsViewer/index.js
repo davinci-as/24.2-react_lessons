@@ -2,7 +2,7 @@ import React from "react";
 import PetCard from "../PetCard";
 
 const PetsViewer = ({pets}) => pets
-    .filter(mascota => mascota.habilitado)
+    .filter(({habilitado}) => habilitado)
     .map(mascota => <PetCard {...mascota}/>)
 
 export default PetsViewer;

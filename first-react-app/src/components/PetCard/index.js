@@ -1,8 +1,8 @@
 import React from "react";
 
-const PetCard = mascota => <div>
-    <p>{mascota.nombre}</p>
-    <img src={mascota.imagen} />
+const PetCard = ({ nombre, imagen }) => <div>
+    <p>{nombre}</p>
+    <img src={imagen} />
 </div>
 
 export default PetCard;
