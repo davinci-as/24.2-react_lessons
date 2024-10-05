@@ -1,8 +1,8 @@
 const mascotas = [
-    {nombre: "perro", imagen: "" },
-    {nombre: "gato", imagen: "" },
-    {nombre: "pato", imagen: "" },
-    {nombre: "puma", imagen: ""}
+    {nombre: "perro", imagen: "", habilitado: true },
+    {nombre: "gato", imagen: "", habilitado: true },
+    {nombre: "pato", imagen: "", habilitado: false },
+    {nombre: "puma", imagen: "", habilitado: true}
 ];
 
 function Mascota (nombre){
@@ -13,5 +13,6 @@ function Mascota (nombre){
 }
 
 mascotas
+    .filter(mascota => mascota.habilitado)
     .map(mascota => mascota.nombre)
-    .map(mascota => Mascota(mascota));
+    .map(mascota => Mascota(mascota))
