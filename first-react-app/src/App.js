@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import PetCard from './components/PetCard';
 
 function App() {
   const mascotas = [
@@ -21,18 +21,13 @@ function App() {
       habilitado: true }
   ];
 
-  const tituloMascota = mascota => <div>
-      <p>{mascota.nombre}</p>
-      <img src={mascota.imagen} />
-    </div>
-
   return (
     <div className="App">
       <header className="App-header">
         {
           mascotas
             .filter(mascota => mascota.habilitado)
-            .map(tituloMascota)
+            .map(mascota => <PetCard {...mascota}/>)
         }
       </header>
     </div>
