@@ -1,8 +1,8 @@
 import './App.css';
-import PetCard from './components/PetCard';
+import PetsViewer from './components/PetsViewer';
 
 function App() {
-  const mascotas = [
+  const pets = [
     { 
       nombre: "pato", 
       imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlP43bXvIFTB5XmGqCJq9keyTQAmeZ0XZnTQ&s", 
@@ -24,11 +24,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {
-          mascotas
-            .filter(mascota => mascota.habilitado)
-            .map(mascota => <PetCard {...mascota}/>)
-        }
+        <PetsViewer pets={pets} />
       </header>
     </div>
   );
