@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import PetCard from "../PetCard";
 import styles from "./styles.module.css";
 
 const PetsViewer = ({pets}) => {
-    const list = []
+
+    const addItem = (item) => {
+        setList([...list, item]);
+    }
+
+    const [list, setList] = useState([]);
+
     return <><div className={styles.container}>
         { pets
             .filter(({habilitado}) => habilitado)
             .map((mascota, index) => 
-                <PetCard key={index} {...mascota}/>
+                <PetCard key={index} {...mascota} addItem={addItem}/>
             )
         }
     </div>
