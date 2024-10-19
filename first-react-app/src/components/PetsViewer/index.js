@@ -3,6 +3,6 @@ import PetCard from "../PetCard";
 
 const PetsViewer = ({pets}) => pets
     .filter(({habilitado}) => habilitado)
-    .map(mascota => <PetCard {...mascota}/>)
+    .map((mascota, index) => <PetCard key={index} {...mascota}/>)
 
 export default PetsViewer;
