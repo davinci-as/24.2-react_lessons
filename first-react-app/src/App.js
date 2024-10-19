@@ -1,22 +1,26 @@
 import './App.css';
 import {
+  useEffect,
   useState
 } from 'react';
 import PetsViewer from './components/PetsViewer';
 
 const URL = "http://localhost:3000/data/pets.json"
 function App() {
-  const [pets, setPets] = useState();
+  const [user, setUser] = useState(false)
+  const [pets, setPets] = useState([]);
 
-  /*fetch(URL)
+  useEffect(() => {
+    console.log("SE DISPARO USEEFFECT")
+    fetch(URL)
     .then(response => response.json())
     .then(response => response.response)
-    .then(response => {
-      console.log("response", response);
-      return response;
-    })
-    .then(pets => setPets(pets))*/
-
+    .then(pets => {
+      setUser(true)
+      setPets(pets)
+    });
+  }, [])
+  
   return (
     <div className="App">
       <header className="App-header">
