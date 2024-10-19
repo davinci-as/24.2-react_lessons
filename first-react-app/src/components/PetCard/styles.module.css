@@ -4,7 +4,16 @@
     border: 1px solid #fff;
     border-radius: 2rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .image {
     width: 100%;
+}
+.callToAction {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
 }
